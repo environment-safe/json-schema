@@ -1,9 +1,20 @@
-json-schema
-============================
-null
+@environment-safe/json-schema
+=============================
+[JSON Schema](https://json-schema.org/specification) validator and generator with integrated data synthesis.
 
 Usage
 -----
+
+```js
+import { Schema } from '@environment-safe/json-schema';
+
+Schema.generateType('address.streetAddress');
+const schema = new Schema('./file.js'); //or new Schema(jsonObject);
+await schema.loaded;
+
+const isValid = schema.validate(jsonObject);
+const sampleObject = schema.generate(incomingData);
+```
 
 Testing
 -------
